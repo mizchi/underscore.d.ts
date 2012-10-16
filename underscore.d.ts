@@ -2,22 +2,14 @@ interface underscore {
   //collections
 
   // iterating over arrays
-  each(obj:any[], f: () => void): void;
-  each(obj:any[], f: (key: number, value: any) => void): void;
-  each(obj:any[], f: (key: number) => void): void;
-
-  each(obj:any[], f: () => void, context: any): void;
-  each(obj:any[], f: (key: number, value: any) => void, context: any): void;
-  each(obj:any[], f: (key: number) => void, context: any): void;
+  each(obj:any[], f: () => void, context?: any): void;
+  each(obj:any[], f: (value: any) => void, context?: any): void;
+  each(obj:any[], f: (value: any, key: number) => void, context?: any): void;
 
   // iterating over objects
-  each(obj:Object, f: () => void): void;
-  each(obj:Object, f: (key: string, value: any) => void): void;
-  each(obj:Object, f: (key: string) => void): void;
-
-  each(obj:Object, f: () => void, context: any): void;
-  each(obj:Object, f: (key: string, value: any) => void, context: any): void;
-  each(obj:Object, f: (key: string) => void, context: any): void;
+  each(obj:Object, f: () => void, context?: any): void;
+  each(obj:Object, f: (value: any) => void, context?: any): void;
+  each(obj:Object, f: (value: any, key: string) => void, context?: any): void;
 
   // TODO forEach needs to be types same as each
   forEach(obj:any, f: Function): void;
