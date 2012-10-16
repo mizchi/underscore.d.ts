@@ -1,7 +1,17 @@
 interface underscore {
   //collections
-  each(obj:any, f: Function): void;
-  each(obj:any, f: Function, context:any): void;
+
+  // iterating over arrays
+  each(obj:any[], f: () => void, context?: any): void;
+  each(obj:any[], f: (value: any) => void, context?: any): void;
+  each(obj:any[], f: (value: any, key: number) => void, context?: any): void;
+
+  // iterating over objects
+  each(obj:Object, f: () => void, context?: any): void;
+  each(obj:Object, f: (value: any) => void, context?: any): void;
+  each(obj:Object, f: (value: any, key: string) => void, context?: any): void;
+
+  // TODO forEach needs to be types same as each
   forEach(obj:any, f: Function): void;
   forEach(obj:any, f: Function, context:any): void;
 
@@ -159,6 +169,6 @@ interface underscore {
   template(template:string, bindings:any): string;
 
   //chaining
-  chain(obj:any):any;
-  //value is useless
+  chain(obj:any): underscore;
+  value(): any;
 }
